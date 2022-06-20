@@ -12,6 +12,7 @@ from blog.views.blog.article_views import (
 from blog.views.blog.category_views import (
     CategoryArticlesListView,
     CategoriesListView,
+    CategoriesListViewDash,
     CategoryCreateView,
     CategoryUpdateCreateView,
 )
@@ -124,6 +125,13 @@ urlpatterns = [
         route='categories/list/',
         view=CategoriesListView.as_view(),
         name='categories_list'
+    ),
+
+    # /dashboard-categories-list/
+    path(
+        route='categories/dash/list/',
+        view=CategoriesListViewDash.as_view(),
+        name='categories_dash_list'
     ),
 
     # /category/new/
